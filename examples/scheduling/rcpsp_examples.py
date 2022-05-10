@@ -1,17 +1,6 @@
-from examples.discrete_optimization.rcpsp_multiskill_parser_example import (
-    get_complete_path_ms,
-    get_data_available_ms,
-)
-from examples.discrete_optimization.rcpsp_parser_example import (
-    get_complete_path,
-    get_data_available,
-)
-from skdecide import DiscreteDistribution, rollout_episode
-from skdecide.builders.domain.scheduling.scheduling_domains_modelling import (
-    SchedulingAction,
-    SchedulingActionEnum,
-    State,
-)
+from examples.scheduling.rcpsp_datasets import get_complete_path
+from examples.scheduling.rcpsp_multiskill_datasets import get_data_available_ms
+from skdecide import rollout_episode
 from skdecide.hub.domain.rcpsp.rcpsp_sk import MSRCPSP, RCPSP
 from skdecide.hub.domain.rcpsp.rcpsp_sk_parser import (
     load_domain,
