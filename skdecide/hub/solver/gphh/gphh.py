@@ -942,9 +942,11 @@ class GPHHPolicy(DeterministicPolicies):
             # Force the scheduler_tasks_start_times to be disjoint with the complete tasks,
             # this avoid a corner effect giving wrong results in the numba SGS implementation
             # (sgs_fast_partial_schedule_incomplete_permutation_tasks)
-            scheduled_tasks_start_times = {j: scheduled_tasks_start_times[j]
-                                           for j in scheduled_tasks_start_times
-                                           if j not in tasks_complete_dict}
+            scheduled_tasks_start_times = {
+                j: scheduled_tasks_start_times[j]
+                for j in scheduled_tasks_start_times
+                if j not in tasks_complete_dict
+            }
             solution = RCPSPSolution(
                 problem=do_model,
                 rcpsp_permutation=normalized_values_for_do,
